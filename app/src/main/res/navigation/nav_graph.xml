@@ -21,7 +21,7 @@
             app:destination="@id/schoolsListFragment" />
         <argument
             android:name="school"
-            app:argType="usa.chase.nycschools.model.remote.response.School"
+            app:argType="com.azamat.nycschoolforartech.model.remote.response.School"
             app:nullable="true"
             android:defaultValue="@null" />
 

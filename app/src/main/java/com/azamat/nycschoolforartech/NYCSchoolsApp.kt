@@ -16,7 +16,7 @@ class NYCSchoolsApp : Application() {
         initSharedPreferences(this.applicationContext)
 
         startKoin{
-            androidLogger()
+//            androidLogger()
             androidContext(this@NYCSchoolsApp)
             modules(listOf(viewModelsModule, networkModule, repositoryModule, apiModule, roomModule))
         }

@@ -1,5 +1,6 @@
 package com.azamat.nycschoolforartech.di
 
+import com.azamat.nycschoolforartech.BuildConfig
 import com.azamat.nycschoolforartech.model.Constants.OkHttp_TIMEOUT
 import com.azamat.nycschoolforartech.util.ResponseHandler
 import com.google.gson.GsonBuilder

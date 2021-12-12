@@ -58,7 +58,7 @@ class SchoolsListFragment : BaseFragment<FragmentSchoolsListBinding>() {
     }
 
     private fun navigateToScoreScreen(school: School) {
-        getNav(binding.root).navigate(R.id.action_schoolsListFragment_to_scoreFragment, bundleOf("school" to school), anim)
+        getNav(binding.root).navigate(R.id.action_schoolsListFragment_to_scoreFragment, bundleOf("school" to school))
     }
 
     private fun makePhoneCall(phoneNo: String?) {

@@ -17,11 +17,11 @@ interface SchoolDao {
     fun getAll(): List<SchoolEntity?>?
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(school: SchoolEntity): Long?
+    fun insert(school: SchoolEntity): Long?
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insertAll(schools: List<SchoolEntity>) : List<Long>?
+    fun insertAll(schools: List<SchoolEntity>) : List<Long>?
 
     @Query("DELETE FROM schools")
-    suspend fun deleteAll() : Int?
+    fun deleteAll() : Int?
 }
