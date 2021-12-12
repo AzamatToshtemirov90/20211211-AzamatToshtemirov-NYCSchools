@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="school"
+            type="com.azamat.nycschoolforartech.model.remote.response.School" />
+    </data>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="3dp"
+        app:cardMaxElevation="5dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true">
+
+        <!--
+            In the above cardview widget
+            card elevation property will give the elevation to our card view
+            card corner radius will provide radius to our card view
+            card background color will give background color to your card view
+            card max elevation will give the cardview maximum elevation
+            card prevent corner overlap will add padding to CardView on v20 and
+            before to prevent intersections between the Card content and rounded corners.
+            card use compact padding will add padding in API v21+ as well to have the same
+            measurements with previous versions.
+        -->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            >
+
+            <!--Text View to display School Name-->
+            <TextView
+                android:id="@+id/tv_school_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:paddingEnd="6dp"
+                android:text="@{school.schoolName}"
+                tools:text="@string/example_school_name"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:background="@android:color/transparent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="@id/btn_phone_number" />
+
+            <!--Text View to display School Address-->
+            <TextView
+                android:id="@+id/tv_school_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                tools:text="@string/example_location"
+                android:text="@{school.location}"
+                android:maxLines="2"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:background="@android:color/transparent"
+                app:layout_constraintTop_toBottomOf="@id/tv_school_name"
+                app:layout_constraintStart_toStartOf="@id/btn_phone_number"/>
+
+            <!--Button to make a phone call-->
+            <Button
+                android:id="@+id/btn_phone_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:backgroundTint="@color/gray"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:textAllCaps="false"
+                android:text="@{@string/schools_phone(school.phoneNumber)}"
+                tools:text="Phone # 641-819-1502"
+                android:textSize="12sp"
+                android:layout_marginStart="5dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_school_address"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <!--Button to navigate to address-->
+            <Button
+                android:id="@+id/btn_map"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:backgroundTint="@color/gray"
+                android:textColor="@color/black"
+                android:text="@string/example_address"
+                android:textSize="12sp"
+                android:textAllCaps="false"
+                android:layout_marginEnd="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/btn_phone_number"
+                app:layout_constraintBottom_toBottomOf="@id/btn_phone_number" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+</layout>

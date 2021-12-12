@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/schoolsListFragment">
+
+    <fragment
+        android:id="@+id/schoolsListFragment"
+        android:name="com.azamat.nycschoolforartech.ui.fragment.schoollist.SchoolsListFragment"
+        android:label="SchoolsListFragment" >
+        <action
+            android:id="@+id/action_schoolsListFragment_to_scoreFragment"
+            app:destination="@id/scoreFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/scoreFragment"
+        android:name="com.azamat.nycschoolforartech.ui.fragment.scores.ScoreFragment"
+        android:label="ScoreFragment" >
+        <action
+            android:id="@+id/action_scoreFragment_to_schoolsListFragment"
+            app:destination="@id/schoolsListFragment" />
+        <argument
+            android:name="school"
+            app:argType="usa.chase.nycschools.model.remote.response.School"
+            app:nullable="true"
+            android:defaultValue="@null" />
+
+    </fragment>
+</navigation>

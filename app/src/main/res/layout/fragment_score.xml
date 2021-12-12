@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <import type="android.view.View"/>
+
+        <variable
+            name="vm"
+            type="com.azamat.nycschoolforartech.ui.fragment.scores.ScoreViewModel" />
+    </data>
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.fragment.score.ScoreFragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--Text View to display School Name-->
+            <TextView
+                android:id="@+id/tv_school_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="30dp"
+                tools:text="@string/example_school_name"
+                android:text="@{vm.school.schoolName}"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <!--Text View to display Number of Test Takers-->
+            <TextView
+                android:id="@+id/tv_no_test_taker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="10dp"
+                tools:text="@string/score_no_test_takers"
+                android:text="@{@string/score_no_test_takers(vm.score.testTakersNo)}"
+                android:maxLines="2"
+                android:textColor="@color/black"
+                android:textSize="14sp"/>
+
+            <!--Text View to display Reading Score-->
+            <TextView
+                android:id="@+id/tv_reading_score"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="10dp"
+                tools:text="@string/score_reading_score"
+                android:text="@{@string/score_reading_score(vm.score.readingAvgScore)}"
+                android:maxLines="2"
+                android:textColor="@color/black"
+                android:textSize="14sp"/>
+
+            <!--Text View to display Math Score-->
+            <TextView
+                android:id="@+id/tv_math_score"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="10dp"
+                android:text="@{@string/score_math_score(vm.score.mathAvgScore)}"
+                tools:text="@string/score_math_score"
+                android:maxLines="2"
+                android:textColor="@color/black"
+                android:textSize="14sp"/>
+
+            <!--Text View to display Writing Score-->
+            <TextView
+                android:id="@+id/tv_writing_score"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="10dp"
+                android:text="@{@string/score_writing_score(vm.score.writingAvgScore)}"
+                tools:text="@string/score_writing_score"
+                android:maxLines="2"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray"
+                android:layout_marginBottom="30dp"
+                android:layout_marginTop="30dp"/>
+
+            <!--Text View OVERVIEW-->
+            <TextView
+                android:id="@+id/tv_overview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/overview"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <!--Text View to display Number of Test Takers-->
+            <TextView
+                android:id="@+id/tv_content_overview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="10dp"
+                android:text="@{vm.school.overviewParagraph}"
+                tools:text="@string/score_overview"
+                android:textColor="@color/black"
+                android:textSize="20sp"/>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+</layout>
